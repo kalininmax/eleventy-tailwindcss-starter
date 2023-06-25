@@ -6,6 +6,7 @@ const prettier = require('prettier');
 const postcss = require('postcss');
 const postcssMediaMinmax = require('postcss-media-minmax');
 const autoprefixer = require('autoprefixer');
+const tailwindcss = require('tailwindcss');
 const postcssCsso = require('postcss-csso');
 const postcssAssets = require('postcss-assets');
 const esbuild = require('esbuild');
@@ -47,6 +48,7 @@ module.exports = (config) => {
 	// ======= SCSS =======
 	const postcssPlugins = [
 		postcssMediaMinmax,
+		tailwindcss,
 		autoprefixer,
 		postcssAssets({ loadPaths: ['src/assets/images/inline'], cache: true }),
 		isProd && postcssCsso,
